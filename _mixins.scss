@@ -2,6 +2,7 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "sass:meta";
 @use "@sass-collective/breakpoint";
 @use "@sass-collective/css";
 @use "./variables";
@@ -9,6 +10,10 @@
 @mixin core-styles {
     .grid {
         @include _base;
+    }
+
+    .col {
+        @include _columns;
     }
 }
 
@@ -47,7 +52,7 @@
 
     @for $i from 1 through variables.$columns {
         &-cols-#{$i} {
-            @include _columns($i);
+            @include _tpl-columns($i);
         }
     }
 
@@ -57,7 +62,7 @@
 
     @for $i from 1 through variables.$rows {
         &-rows-#{$i} {
-            @include _rows($i);
+            @include _tpl-rows($i);
         }
     }
 
@@ -86,14 +91,95 @@
 
                 @for $i from 1 through variables.$columns {
                     @include css.selector(".grid-cols-#{$i}", $key) {
-                        @include _columns($i);
+                        @include _tpl-columns($i);
                     }
                 }
 
                 @for $i from 1 through variables.$rows {
                     @include css.selector(".grid-rows-#{$i}", $key) {
-                        @include _rows($i);
+                        @include _tpl-rows($i);
                     }
+                }
+            }
+        }
+    }
+}
+
+@mixin _columns {
+
+    // --------------------------------- //
+    // Span
+    // --------------------------------- //
+
+    @include _auto-suffix {
+        @include _column-span(auto);
+    }
+
+    @include _span-for(column, variables.$columns);
+
+    @include _span-full-suffix {
+        @include _column-span(full);
+    }
+
+    // --------------------------------- //
+    // Start
+    // --------------------------------- //
+
+    @include _start-for(column, variables.$columns);
+
+    @include _start-auto-suffix {
+        @include _column-start(auto);
+    }
+
+    // --------------------------------- //
+    // End
+    // --------------------------------- //
+
+    @include _end-for(column, variables.$columns);
+
+    @include _end-auto-suffix {
+        @include _column-end(auto);
+    }
+
+    // --------------------------------- //
+    // Breakpoint
+    // --------------------------------- //
+
+    @each $key, $value in breakpoint.$screens {
+        @include breakpoint.up($key) {
+            @at-root {
+                @include css.selector(".col-auto", $key) {
+                    @include _column-span(auto);
+                }
+
+                @for $i from 1 through variables.$columns {
+                    @include css.selector(".col-span-#{$i}", $key) {
+                        @include _column-span($i);
+                    }
+                }
+
+                @include css.selector(".col-span-full", $key) {
+                    @include _column-span(full);
+                }
+
+                @for $i from 1 through variables.$columns + 1 {
+                    @include css.selector(".col-start-#{$i}", $key) {
+                        @include _column-start($i);
+                    }
+                }
+
+                @include css.selector(".col-start-auto", $key) {
+                    @include _column-start(auto);
+                }
+
+                @for $i from 1 through variables.$columns + 1 {
+                    @include css.selector(".col-end-#{$i}", $key) {
+                        @include _column-end($i);
+                    }
+                }
+
+                @include css.selector(".col-end-auto", $key) {
+                    @include _column-end(auto);
                 }
             }
         }
@@ -106,12 +192,102 @@
     grid-auto-flow: $value #{$is-dense};
 }
 
-@mixin _columns($size) {
+@mixin _tpl-columns($size) {
     grid-template-columns: repeat($size, minmax(0, 1fr));
 }
 
-@mixin _rows($size) {
+@mixin _tpl-rows($size) {
     grid-template-rows: repeat($size, minmax(0, 1fr));
+}
+
+@mixin _column-span($value) {
+    @if meta.type-of($value) != "number" {
+        @if $value == "full" {
+            grid-column: 1 / -1;
+        } @else {
+            grid-column: $value;
+        }
+    } @else {
+        grid-column: span $value / span $value;
+    }
+}
+
+@mixin _column-start($value) {
+    grid-column-start: $value;
+}
+
+@mixin _column-end($value) {
+    grid-column-end: $value;
+}
+
+@mixin _auto-suffix {
+    &-auto {
+        @content;
+    }
+}
+
+@mixin _start-auto-suffix {
+    &-start {
+        @include _auto-suffix {
+            @content;
+        }
+    }
+}
+
+@mixin _end-auto-suffix {
+    &-end {
+        @include _auto-suffix {
+            @content;
+        }
+    }
+}
+
+@mixin _span-full-suffix {
+    &-span-full {
+        @content;
+    }
+}
+
+@mixin _span-for($type, $limit) {
+    @for $i from 1 through $limit {
+        &-span-#{$i} {
+            @if ($type == "column") {
+                @include _column-span($i);
+            }
+
+            @if ($type == "row") {
+                @include _row-span($i);
+            }
+        }
+    }
+}
+
+@mixin _start-for($mixin, $limit) {
+    @for $i from 1 through $limit + 1 {
+        &-start-#{$i} {
+            @if ($mixin == "column") {
+                @include _column-start($i);
+            }
+
+            @if ($mixin == "row") {
+                @include _row-start($i);
+            }
+        }
+    }
+}
+
+@mixin _end-for($mixin, $limit) {
+    @for $i from 1 through $limit + 1 {
+        &-end-#{$i} {
+            @if ($mixin == "column") {
+                @include _column-end($i);
+            }
+
+            @if ($mixin == "row") {
+                @include _row-end($i);
+            }
+        }
+    }
 }
 
 // ------------------------------------------------------------------------- //
