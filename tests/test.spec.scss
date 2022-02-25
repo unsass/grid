@@ -15,6 +15,636 @@
             @include expect {
                 .grid {
                     display: grid;
+                    column-gap: 12px;
+                    row-gap: 12px;
+                }
+
+                .grid-flow-col {
+                    grid-auto-flow: column;
+                }
+
+                .grid-flow-col-dense {
+                    grid-auto-flow: column dense;
+                }
+
+                .grid-flow-row {
+                    grid-auto-flow: row;
+                }
+
+                .grid-flow-row-dense {
+                    grid-auto-flow: row dense;
+                }
+
+                .grid-cols-1 {
+                    grid-template-columns: repeat(1, minmax(0, 1fr));
+                }
+
+                .grid-cols-2 {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+
+                .grid-cols-3 {
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                }
+
+                .grid-cols-4 {
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                }
+
+                .grid-cols-5 {
+                    grid-template-columns: repeat(5, minmax(0, 1fr));
+                }
+
+                .grid-cols-6 {
+                    grid-template-columns: repeat(6, minmax(0, 1fr));
+                }
+
+                .grid-cols-7 {
+                    grid-template-columns: repeat(7, minmax(0, 1fr));
+                }
+
+                .grid-cols-8 {
+                    grid-template-columns: repeat(8, minmax(0, 1fr));
+                }
+
+                .grid-cols-9 {
+                    grid-template-columns: repeat(9, minmax(0, 1fr));
+                }
+
+                .grid-cols-10 {
+                    grid-template-columns: repeat(10, minmax(0, 1fr));
+                }
+
+                .grid-cols-11 {
+                    grid-template-columns: repeat(11, minmax(0, 1fr));
+                }
+
+                .grid-cols-12 {
+                    grid-template-columns: repeat(12, minmax(0, 1fr));
+                }
+
+                .grid-rows-1 {
+                    grid-template-rows: repeat(1, minmax(0, 1fr));
+                }
+
+                .grid-rows-2 {
+                    grid-template-rows: repeat(2, minmax(0, 1fr));
+                }
+
+                .grid-rows-3 {
+                    grid-template-rows: repeat(3, minmax(0, 1fr));
+                }
+
+                .grid-rows-4 {
+                    grid-template-rows: repeat(4, minmax(0, 1fr));
+                }
+
+                .grid-rows-5 {
+                    grid-template-rows: repeat(5, minmax(0, 1fr));
+                }
+
+                .grid-rows-6 {
+                    grid-template-rows: repeat(6, minmax(0, 1fr));
+                }
+
+                @media (min-width: 320px) {
+                    .xs\:grid-flow-col {
+                        grid-auto-flow: column;
+                    }
+
+                    .xs\:grid-flow-col-dense {
+                        grid-auto-flow: column dense;
+                    }
+
+                    .xs\:grid-flow-row {
+                        grid-auto-flow: row;
+                    }
+
+                    .xs\:grid-flow-row-dense {
+                        grid-auto-flow: row dense;
+                    }
+
+                    .xs\:grid-cols-1 {
+                        grid-template-columns: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-2 {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-3 {
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-4 {
+                        grid-template-columns: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-5 {
+                        grid-template-columns: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-6 {
+                        grid-template-columns: repeat(6, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-7 {
+                        grid-template-columns: repeat(7, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-8 {
+                        grid-template-columns: repeat(8, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-9 {
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-10 {
+                        grid-template-columns: repeat(10, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-11 {
+                        grid-template-columns: repeat(11, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-cols-12 {
+                        grid-template-columns: repeat(12, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-rows-1 {
+                        grid-template-rows: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-rows-2 {
+                        grid-template-rows: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-rows-3 {
+                        grid-template-rows: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-rows-4 {
+                        grid-template-rows: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-rows-5 {
+                        grid-template-rows: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .xs\:grid-rows-6 {
+                        grid-template-rows: repeat(6, minmax(0, 1fr));
+                    }
+                }
+
+                @media (min-width: 480px) {
+                    .sm\:grid-flow-col {
+                        grid-auto-flow: column;
+                    }
+
+                    .sm\:grid-flow-col-dense {
+                        grid-auto-flow: column dense;
+                    }
+
+                    .sm\:grid-flow-row {
+                        grid-auto-flow: row;
+                    }
+
+                    .sm\:grid-flow-row-dense {
+                        grid-auto-flow: row dense;
+                    }
+
+                    .sm\:grid-cols-1 {
+                        grid-template-columns: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-2 {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-3 {
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-4 {
+                        grid-template-columns: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-5 {
+                        grid-template-columns: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-6 {
+                        grid-template-columns: repeat(6, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-7 {
+                        grid-template-columns: repeat(7, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-8 {
+                        grid-template-columns: repeat(8, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-9 {
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-10 {
+                        grid-template-columns: repeat(10, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-11 {
+                        grid-template-columns: repeat(11, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-cols-12 {
+                        grid-template-columns: repeat(12, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-rows-1 {
+                        grid-template-rows: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-rows-2 {
+                        grid-template-rows: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-rows-3 {
+                        grid-template-rows: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-rows-4 {
+                        grid-template-rows: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-rows-5 {
+                        grid-template-rows: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .sm\:grid-rows-6 {
+                        grid-template-rows: repeat(6, minmax(0, 1fr));
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    .md\:grid-flow-col {
+                        grid-auto-flow: column;
+                    }
+
+                    .md\:grid-flow-col-dense {
+                        grid-auto-flow: column dense;
+                    }
+
+                    .md\:grid-flow-row {
+                        grid-auto-flow: row;
+                    }
+
+                    .md\:grid-flow-row-dense {
+                        grid-auto-flow: row dense;
+                    }
+
+                    .md\:grid-cols-1 {
+                        grid-template-columns: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-2 {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-3 {
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-4 {
+                        grid-template-columns: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-5 {
+                        grid-template-columns: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-6 {
+                        grid-template-columns: repeat(6, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-7 {
+                        grid-template-columns: repeat(7, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-8 {
+                        grid-template-columns: repeat(8, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-9 {
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-10 {
+                        grid-template-columns: repeat(10, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-11 {
+                        grid-template-columns: repeat(11, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-cols-12 {
+                        grid-template-columns: repeat(12, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-rows-1 {
+                        grid-template-rows: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-rows-2 {
+                        grid-template-rows: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-rows-3 {
+                        grid-template-rows: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-rows-4 {
+                        grid-template-rows: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-rows-5 {
+                        grid-template-rows: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .md\:grid-rows-6 {
+                        grid-template-rows: repeat(6, minmax(0, 1fr));
+                    }
+                }
+
+                @media (min-width: 960px) {
+                    .lg\:grid-flow-col {
+                        grid-auto-flow: column;
+                    }
+
+                    .lg\:grid-flow-col-dense {
+                        grid-auto-flow: column dense;
+                    }
+
+                    .lg\:grid-flow-row {
+                        grid-auto-flow: row;
+                    }
+
+                    .lg\:grid-flow-row-dense {
+                        grid-auto-flow: row dense;
+                    }
+
+                    .lg\:grid-cols-1 {
+                        grid-template-columns: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-2 {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-3 {
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-4 {
+                        grid-template-columns: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-5 {
+                        grid-template-columns: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-6 {
+                        grid-template-columns: repeat(6, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-7 {
+                        grid-template-columns: repeat(7, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-8 {
+                        grid-template-columns: repeat(8, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-9 {
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-10 {
+                        grid-template-columns: repeat(10, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-11 {
+                        grid-template-columns: repeat(11, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-cols-12 {
+                        grid-template-columns: repeat(12, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-rows-1 {
+                        grid-template-rows: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-rows-2 {
+                        grid-template-rows: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-rows-3 {
+                        grid-template-rows: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-rows-4 {
+                        grid-template-rows: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-rows-5 {
+                        grid-template-rows: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .lg\:grid-rows-6 {
+                        grid-template-rows: repeat(6, minmax(0, 1fr));
+                    }
+                }
+
+                @media (min-width: 1200px) {
+                    .xl\:grid-flow-col {
+                        grid-auto-flow: column;
+                    }
+
+                    .xl\:grid-flow-col-dense {
+                        grid-auto-flow: column dense;
+                    }
+
+                    .xl\:grid-flow-row {
+                        grid-auto-flow: row;
+                    }
+
+                    .xl\:grid-flow-row-dense {
+                        grid-auto-flow: row dense;
+                    }
+
+                    .xl\:grid-cols-1 {
+                        grid-template-columns: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-2 {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-3 {
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-4 {
+                        grid-template-columns: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-5 {
+                        grid-template-columns: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-6 {
+                        grid-template-columns: repeat(6, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-7 {
+                        grid-template-columns: repeat(7, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-8 {
+                        grid-template-columns: repeat(8, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-9 {
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-10 {
+                        grid-template-columns: repeat(10, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-11 {
+                        grid-template-columns: repeat(11, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-cols-12 {
+                        grid-template-columns: repeat(12, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-rows-1 {
+                        grid-template-rows: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-rows-2 {
+                        grid-template-rows: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-rows-3 {
+                        grid-template-rows: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-rows-4 {
+                        grid-template-rows: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-rows-5 {
+                        grid-template-rows: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .xl\:grid-rows-6 {
+                        grid-template-rows: repeat(6, minmax(0, 1fr));
+                    }
+                }
+
+                @media (min-width: 1400px) {
+                    .\32 xl\:grid-flow-col {
+                        grid-auto-flow: column;
+                    }
+
+                    .\32 xl\:grid-flow-col-dense {
+                        grid-auto-flow: column dense;
+                    }
+
+                    .\32 xl\:grid-flow-row {
+                        grid-auto-flow: row;
+                    }
+
+                    .\32 xl\:grid-flow-row-dense {
+                        grid-auto-flow: row dense;
+                    }
+
+                    .\32 xl\:grid-cols-1 {
+                        grid-template-columns: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-2 {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-3 {
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-4 {
+                        grid-template-columns: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-5 {
+                        grid-template-columns: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-6 {
+                        grid-template-columns: repeat(6, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-7 {
+                        grid-template-columns: repeat(7, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-8 {
+                        grid-template-columns: repeat(8, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-9 {
+                        grid-template-columns: repeat(9, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-10 {
+                        grid-template-columns: repeat(10, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-11 {
+                        grid-template-columns: repeat(11, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-cols-12 {
+                        grid-template-columns: repeat(12, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-rows-1 {
+                        grid-template-rows: repeat(1, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-rows-2 {
+                        grid-template-rows: repeat(2, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-rows-3 {
+                        grid-template-rows: repeat(3, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-rows-4 {
+                        grid-template-rows: repeat(4, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-rows-5 {
+                        grid-template-rows: repeat(5, minmax(0, 1fr));
+                    }
+
+                    .\32 xl\:grid-rows-6 {
+                        grid-template-rows: repeat(6, minmax(0, 1fr));
+                    }
                 }
             }
         }

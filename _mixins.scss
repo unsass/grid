@@ -2,6 +2,8 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "@sass-collective/breakpoint";
+@use "@sass-collective/css";
 @use "./variables";
 
 @mixin core-styles {
@@ -16,10 +18,110 @@
 
 @mixin _base {
     display: grid;
+    column-gap: variables.$column-gap;
+    row-gap: variables.$row-gap;
+
+    // --------------------------------- //
+    // Auto flow
+    // --------------------------------- //
+
+    &-flow-col {
+        @include _auto-flow(column);
+    }
+
+    &-flow-col-dense {
+        @include _auto-flow(column, true);
+    }
+
+    &-flow-row {
+        @include _auto-flow(row);
+    }
+
+    &-flow-row-dense {
+        @include _auto-flow(row, true);
+    }
+
+    // --------------------------------- //
+    // Columns
+    // --------------------------------- //
+
+    @for $i from 1 through variables.$columns {
+        &-cols-#{$i} {
+            @include _columns($i);
+        }
+    }
+
+    // --------------------------------- //
+    // Rows
+    // --------------------------------- //
+
+    @for $i from 1 through variables.$rows {
+        &-rows-#{$i} {
+            @include _rows($i);
+        }
+    }
+
+    // --------------------------------- //
+    // Breakpoint
+    // --------------------------------- //
+
+    @each $key, $value in breakpoint.$screens {
+        @include breakpoint.up($key) {
+            @at-root {
+                @include css.selector(".grid-flow-col", $key) {
+                    @include _auto-flow(column);
+                }
+
+                @include css.selector(".grid-flow-col-dense", $key) {
+                    @include _auto-flow(column, true);
+                }
+
+                @include css.selector(".grid-flow-row", $key) {
+                    @include _auto-flow(row);
+                }
+
+                @include css.selector(".grid-flow-row-dense", $key) {
+                    @include _auto-flow(row, true);
+                }
+
+                @for $i from 1 through variables.$columns {
+                    @include css.selector(".grid-cols-#{$i}", $key) {
+                        @include _columns($i);
+                    }
+                }
+
+                @for $i from 1 through variables.$rows {
+                    @include css.selector(".grid-rows-#{$i}", $key) {
+                        @include _rows($i);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin _auto-flow($value, $dense: false) {
+    $is-dense: if($dense, "dense", "");
+
+    grid-auto-flow: $value #{$is-dense};
+}
+
+@mixin _columns($size) {
+    grid-template-columns: repeat($size, minmax(0, 1fr));
+}
+
+@mixin _rows($size) {
+    grid-template-rows: repeat($size, minmax(0, 1fr));
 }
 
 // ------------------------------------------------------------------------- //
 // Public mixins
 // ------------------------------------------------------------------------- //
 
-// ...
+@mixin column-gap($size: variables.$column-gap) {
+    column-gap: $size;
+}
+
+@mixin row-gap($size: variables.$row-gap) {
+    row-gap: $size;
+}
