@@ -15,6 +15,10 @@
     .col {
         @include _columns;
     }
+
+    .row {
+        @include _rows;
+    }
 }
 
 // ------------------------------------------------------------------------- //
@@ -186,6 +190,87 @@
     }
 }
 
+@mixin _rows {
+
+    // --------------------------------- //
+    // Span
+    // --------------------------------- //
+
+    @include _auto-suffix {
+        @include _row-span(auto);
+    }
+
+    @include _span-for(row, variables.$rows);
+
+    @include _span-full-suffix {
+        @include _row-span(full);
+    }
+
+    // --------------------------------- //
+    // Start
+    // --------------------------------- //
+
+    @include _start-for(row, variables.$rows);
+
+    @include _start-auto-suffix {
+        @include _row-start(auto);
+    }
+
+    // --------------------------------- //
+    // End
+    // --------------------------------- //
+
+    @include _end-for(row, variables.$rows);
+
+    @include _end-auto-suffix {
+        @include _row-end(auto);
+    }
+
+    // --------------------------------- //
+    // Breakpoint
+    // --------------------------------- //
+
+    @each $key, $value in breakpoint.$screens {
+        @include breakpoint.up($key) {
+            @at-root {
+                @include css.selector(".col-auto", $key) {
+                    @include _row-span(auto);
+                }
+
+                @for $i from 1 through variables.$columns {
+                    @include css.selector(".col-span-#{$i}", $key) {
+                        @include _row-span($i);
+                    }
+                }
+
+                @include css.selector(".col-span-full", $key) {
+                    @include _row-span(full);
+                }
+
+                @for $i from 1 through variables.$columns + 1 {
+                    @include css.selector(".col-start-#{$i}", $key) {
+                        @include _row-start($i);
+                    }
+                }
+
+                @include css.selector(".col-start-auto", $key) {
+                    @include _row-start(auto);
+                }
+
+                @for $i from 1 through variables.$columns + 1 {
+                    @include css.selector(".col-end-#{$i}", $key) {
+                        @include _row-end($i);
+                    }
+                }
+
+                @include css.selector(".col-end-auto", $key) {
+                    @include _row-end(auto);
+                }
+            }
+        }
+    }
+}
+
 @mixin _auto-flow($value, $dense: false) {
     $is-dense: if($dense, "dense", "");
 
@@ -218,6 +303,26 @@
 
 @mixin _column-end($value) {
     grid-column-end: $value;
+}
+
+@mixin _row-span($value) {
+    @if meta.type-of($value) != "number" {
+        @if $value == "full" {
+            grid-row: 1 / -1;
+        } @else {
+            grid-row: $value;
+        }
+    } @else {
+        grid-row: span $value / span $value;
+    }
+}
+
+@mixin _row-start($value) {
+    grid-row-start: $value;
+}
+
+@mixin _row-end($value) {
+    grid-row-end: $value;
 }
 
 @mixin _auto-suffix {
