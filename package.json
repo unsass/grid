@@ -1,7 +1,7 @@
 {
     "name": "@unsass/grid",
     "version": "0.0.0",
-    "description": "Grid.",
+    "description": "Sass grid classes generator.",
     "scripts": {
         "test": "jest",
         "prepare": "husky install"
