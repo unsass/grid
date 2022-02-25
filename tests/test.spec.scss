@@ -11,11 +11,11 @@
 @include describe("grid.core-styles()") {
     @include it("Should return core styles.") {
         @include assert {
-            @include output {
+            @include output(false) {
                 @include grid.core-styles;
             }
 
-            @include expect {
+            @include expect(false) {
                 .grid {
                     display: grid;
                     column-gap: 12px;
