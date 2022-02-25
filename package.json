@@ -47,5 +47,8 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/unsass/grid.git"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

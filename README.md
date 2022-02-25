@@ -22,7 +22,7 @@ npm install @unsass/grid
 @use "@unsass/grid/styles";
 ```
 
-> This will generate the default grid classes.
+> This will generate the default grid styles.
 
 ### Configuration
 
@@ -40,7 +40,3 @@ npm install @unsass/grid
 | `$column-gap` | `12px`  | Sets the column gap.     |
 | `$rows`       | `6`     | Sets  numbers of rows.   |
 | `$rows-gap`   | `12px`  | Sets the row gap.        |
-
-## API
-
-_Coming soon..._
