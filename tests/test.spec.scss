@@ -1,0 +1,22 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "true" as *;
+@use "../index" as grid;
+
+@include describe("grid.core-styles()") {
+    @include it("Should return core styles.") {
+        @include assert {
+            @include output {
+                @include grid.core-styles;
+            }
+
+            @include expect {
+                .grid {
+                    display: grid;
+                }
+            }
+        }
+    }
+}
