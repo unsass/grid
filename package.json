@@ -1,0 +1,24 @@
+{
+    "name": "@unsass/grid",
+    "version": "0.0.0",
+    "description": "Grid.",
+    "engines": {
+        "node": ">=14.0.0",
+        "npm": ">=8.0.0"
+    },
+    "keywords": [
+        "grid",
+        "unsass",
+        "sass",
+        "css"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/unsass/grid#readme",
+    "bugs": {
+        "url": "https://github.com/unsass/grid/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unsass/grid.git"
+    }
+}
