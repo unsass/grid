@@ -233,37 +233,37 @@
     @each $key, $value in breakpoint.$screens {
         @include breakpoint.up($key) {
             @at-root {
-                @include css.selector(".col-auto", $key) {
+                @include css.selector(".row-auto", $key) {
                     @include _row-span(auto);
                 }
 
                 @for $i from 1 through variables.$columns {
-                    @include css.selector(".col-span-#{$i}", $key) {
+                    @include css.selector(".row-span-#{$i}", $key) {
                         @include _row-span($i);
                     }
                 }
 
-                @include css.selector(".col-span-full", $key) {
+                @include css.selector(".row-span-full", $key) {
                     @include _row-span(full);
                 }
 
                 @for $i from 1 through variables.$columns + 1 {
-                    @include css.selector(".col-start-#{$i}", $key) {
+                    @include css.selector(".row-start-#{$i}", $key) {
                         @include _row-start($i);
                     }
                 }
 
-                @include css.selector(".col-start-auto", $key) {
+                @include css.selector(".row-start-auto", $key) {
                     @include _row-start(auto);
                 }
 
                 @for $i from 1 through variables.$columns + 1 {
-                    @include css.selector(".col-end-#{$i}", $key) {
+                    @include css.selector(".row-end-#{$i}", $key) {
                         @include _row-end($i);
                     }
                 }
 
-                @include css.selector(".col-end-auto", $key) {
+                @include css.selector(".row-end-auto", $key) {
                     @include _row-end(auto);
                 }
             }
