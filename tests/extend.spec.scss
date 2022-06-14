@@ -7,7 +7,7 @@
     $columns: 2,
     $rows: 2,
     $screens: (
-        "sm": 576px
+        "lg": 1024px
     )
 );
 
@@ -91,7 +91,7 @@
                     }
                 }
 
-                @media (min-width: 576px) {
+                @media (min-width: 480px) {
                     .sm\:grid-flow-col {
                         grid-auto-flow: column;
                     }
@@ -159,7 +159,7 @@
                     }
                 }
 
-                @media (min-width: 960px) {
+                @media (min-width: 1024px) {
                     .lg\:grid-flow-col {
                         grid-auto-flow: column;
                     }
@@ -361,7 +361,7 @@
                     }
                 }
 
-                @media (min-width: 576px) {
+                @media (min-width: 480px) {
                     .sm\:col-auto {
                         grid-column: auto;
                     }
@@ -461,7 +461,7 @@
                     }
                 }
 
-                @media (min-width: 960px) {
+                @media (min-width: 1024px) {
                     .lg\:col-auto {
                         grid-column: auto;
                     }
@@ -711,7 +711,7 @@
                     }
                 }
 
-                @media (min-width: 576px) {
+                @media (min-width: 480px) {
                     .sm\:row-auto {
                         grid-row: auto;
                     }
@@ -811,7 +811,7 @@
                     }
                 }
 
-                @media (min-width: 960px) {
+                @media (min-width: 1024px) {
                     .lg\:row-auto {
                         grid-row: auto;
                     }
