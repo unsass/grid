@@ -1,6 +1,6 @@
 {
     "name": "@unsass/grid",
-    "version": "2.0.0-beta.1",
+    "version": "2.0.0",
     "description": "Sass grid classes generator.",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",
