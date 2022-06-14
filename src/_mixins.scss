@@ -5,8 +5,8 @@
 @use "sass:meta";
 @use "@sass-collective/css";
 @use "@unsass/breakpoint";
+@use "./config";
 @use "./variables";
-@use "../config";
 
 @mixin core-styles {
     .grid {
