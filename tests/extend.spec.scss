@@ -3,13 +3,13 @@
 // ============================================================================================= //
 
 @use "true" as *;
-@use "../src/index" as grid with (
+@use "../index" as grid with (
     $columns: 2,
     $rows: 2
 );
 
 @include describe("grid.core-styles()") {
-    @include it("Should return core styles.") {
+    @include it("Should return extended grid declarations.") {
         @include assert {
             @include output(false) {
                 @include grid.core-styles;

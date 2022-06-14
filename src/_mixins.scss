@@ -3,8 +3,8 @@
 // ============================================================================================= //
 
 @use "sass:meta";
-@use "@sass-collective/breakpoint";
 @use "@sass-collective/css";
+@use "@unsass/breakpoint";
 @use "./variables";
 
 @mixin core-styles {
@@ -74,7 +74,7 @@
     // Breakpoint
     // --------------------------------- //
 
-    @each $key, $value in breakpoint.$screens {
+    @each $key, $value in breakpoint.$extend {
         @include breakpoint.up($key) {
             @at-root {
                 @include css.selector(".grid-flow-col", $key) {
@@ -149,7 +149,7 @@
     // Breakpoint
     // --------------------------------- //
 
-    @each $key, $value in breakpoint.$screens {
+    @each $key, $value in breakpoint.$extend {
         @include breakpoint.up($key) {
             @at-root {
                 @include css.selector(".col-auto", $key) {
@@ -230,7 +230,7 @@
     // Breakpoint
     // --------------------------------- //
 
-    @each $key, $value in breakpoint.$screens {
+    @each $key, $value in breakpoint.$extend {
         @include breakpoint.up($key) {
             @at-root {
                 @include css.selector(".row-auto", $key) {
