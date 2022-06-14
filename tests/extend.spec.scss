@@ -5,11 +5,14 @@
 @use "true" as *;
 @use "../index" as grid with (
     $columns: 2,
-    $rows: 2
+    $rows: 2,
+    $screens: (
+        "lg": 1024px
+    )
 );
 
 @include describe("grid.core-styles()") {
-    @include it("Should return core styles.") {
+    @include it("Should return extended grid declarations.") {
         @include assert {
             @include output(false) {
                 @include grid.core-styles;
@@ -156,7 +159,7 @@
                     }
                 }
 
-                @media (min-width: 960px) {
+                @media (min-width: 1024px) {
                     .lg\:grid-flow-col {
                         grid-auto-flow: column;
                     }
@@ -458,7 +461,7 @@
                     }
                 }
 
-                @media (min-width: 960px) {
+                @media (min-width: 1024px) {
                     .lg\:col-auto {
                         grid-column: auto;
                     }
@@ -808,7 +811,7 @@
                     }
                 }
 
-                @media (min-width: 960px) {
+                @media (min-width: 1024px) {
                     .lg\:row-auto {
                         grid-row: auto;
                     }
