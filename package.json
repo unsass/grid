@@ -7,6 +7,7 @@
         "lint": "npm-run-all --parallel lint:*",
         "test": "jest",
         "prepare": "husky install",
+        "release:beta": "semantic-release --branches beta",
         "release": "semantic-release --branches main"
     },
     "engines": {
