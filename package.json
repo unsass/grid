@@ -9,11 +9,11 @@
         "prepare": "husky install",
         "release": "semantic-release --branches main"
     },
-    "sass": "index.scss",
     "engines": {
         "node": ">=14.0.0",
         "npm": ">=8.0.0"
     },
+    "sass": "index.scss",
     "devDependencies": {
         "@commitlint/cli": "^17.0.2",
         "@commitlint/config-conventional": "^17.0.2",
@@ -49,6 +49,11 @@
         "type": "git",
         "url": "git+https://github.com/unsass/grid.git"
     },
+    "files": [
+        "src/**/*",
+        "*.scss",
+        "CHANGELOG.md"
+    ],
     "publishConfig": {
         "access": "public"
     }
