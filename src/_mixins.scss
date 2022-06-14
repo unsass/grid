@@ -6,6 +6,7 @@
 @use "@sass-collective/css";
 @use "@unsass/breakpoint";
 @use "./variables";
+@use "../config";
 
 @mixin core-styles {
     .grid {

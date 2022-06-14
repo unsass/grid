@@ -5,7 +5,10 @@
 @use "true" as *;
 @use "../index" as grid with (
     $columns: 2,
-    $rows: 2
+    $rows: 2,
+    $screens: (
+        "sm": 576px
+    )
 );
 
 @include describe("grid.core-styles()") {
@@ -88,7 +91,7 @@
                     }
                 }
 
-                @media (min-width: 480px) {
+                @media (min-width: 576px) {
                     .sm\:grid-flow-col {
                         grid-auto-flow: column;
                     }
@@ -358,7 +361,7 @@
                     }
                 }
 
-                @media (min-width: 480px) {
+                @media (min-width: 576px) {
                     .sm\:col-auto {
                         grid-column: auto;
                     }
@@ -708,7 +711,7 @@
                     }
                 }
 
-                @media (min-width: 480px) {
+                @media (min-width: 576px) {
                     .sm\:row-auto {
                         grid-row: auto;
                     }
