@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Sass grid classes generator.
+Sass functions and mixins to use grid.
 
 ## Installing
 
