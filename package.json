@@ -1,6 +1,6 @@
 {
     "name": "@unsass/grid",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Sass functions and mixins to use grid.",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",

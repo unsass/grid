@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/unsass/grid/compare/v2.0.0...v2.0.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* packages vulnerabilities ([d4d8d90](https://github.com/unsass/grid/commit/d4d8d9064884620cf077adc81c286d9cafc5154a))
+
 ## [2.0.0](https://github.com/unsass/grid/compare/v1.0.1...v2.0.0) (2022-06-14)
 
 
