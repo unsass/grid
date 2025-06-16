@@ -1,0 +1,51 @@
+name: Publish
+
+on:
+  push:
+    branches: [ "main", "develop", "beta" ]
+  pull_request:
+    branches: [ "main", "develop", "beta" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci --ignore-scripts --no-audit
+
+      - name: Tests
+        run: npm run test
+
+      - name: Tests Reporter
+        uses: dorny/test-reporter@v1
+        with:
+          name: Tests
+          path: junit.xml
+          reporter: jest-junit
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Install Dependencies
+        run: npm ci --ignore-scripts --no-audit
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run release
