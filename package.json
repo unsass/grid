@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "@sass-collective/css": "^3.0.0",
-        "@unsass/breakpoint": "^2.1.2",
+        "@unsass/breakpoint": "^2.5.1",
         "sass": "^1.89.2"
     },
     "keywords": [
