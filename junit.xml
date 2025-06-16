@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="2" failures="0" errors="0" time="0.002159">
-    <testsuite name="__tests__/scss.spec.js" timestamp="2025-06-16T10:01:55.326Z" hostname="PC-FIX" tests="2" failures="0" errors="0" skipped="0" time="0.002159">
-        <testcase classname="__tests__/scss.spec.js" name="grid.core-styles() &gt; Should return extended grid declarations." time="0.0008842">
-        </testcase>
-        <testcase classname="__tests__/scss.spec.js" name="grid.core-styles() &gt; Should return all grid declarations." time="0.0001628">
-        </testcase>
-    </testsuite>
-</testsuites>
