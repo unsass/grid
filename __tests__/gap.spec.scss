@@ -1,0 +1,74 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "pkg:sass-true" as *;
+@use "../index" as grid;
+
+@include describe("grid.column-gap()") {
+    @include it("Should output the default column gap.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include grid.column-gap;
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    column-gap: 12px;
+                }
+            }
+        }
+    }
+
+    @include it("Should output a custom column gap.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include grid.column-gap(24px);
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    column-gap: 24px;
+                }
+            }
+        }
+    }
+}
+
+@include describe("grid.row-gap()") {
+    @include it("Should output the default row gap.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include grid.row-gap;
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    row-gap: 12px;
+                }
+            }
+        }
+    }
+
+    @include it("Should output a custom row gap.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include grid.row-gap(8px);
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    row-gap: 8px;
+                }
+            }
+        }
+    }
+}
