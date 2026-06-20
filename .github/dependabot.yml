@@ -8,3 +8,11 @@ updates:
       - "borisdamevin"
     reviewers:
       - "borisdamevin"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "borisdamevin"
+    reviewers:
+      - "borisdamevin"
