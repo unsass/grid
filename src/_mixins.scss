@@ -28,8 +28,7 @@
 
 @mixin _base {
     display: grid;
-    column-gap: variables.$column-gap;
-    row-gap: variables.$row-gap;
+    gap: variables.$row-gap variables.$column-gap;
 
     // --------------------------------- //
     // Auto flow

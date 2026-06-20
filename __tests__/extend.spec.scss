@@ -21,8 +21,7 @@
             @include expect(false) {
                 .grid {
                     display: grid;
-                    column-gap: 12px;
-                    row-gap: 12px;
+                    gap: 12px 12px;
                 }
 
                 .grid-flow-col {
