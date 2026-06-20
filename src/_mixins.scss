@@ -3,7 +3,7 @@
 // ============================================================================================= //
 
 @use "sass:meta";
-@use "@sass-collective/css";
+@use "@unsass/css";
 @use "@unsass/breakpoint";
 @use "./config";
 @use "./variables";
@@ -77,30 +77,30 @@
     @each $key, $value in breakpoint.$extend {
         @include breakpoint.up($key) {
             @at-root {
-                @include css.selector(".grid-flow-col", $key) {
+                @include css.selector($key, $selector: ".grid-flow-col") {
                     @include _auto-flow(column);
                 }
 
-                @include css.selector(".grid-flow-col-dense", $key) {
+                @include css.selector($key, $selector: ".grid-flow-col-dense") {
                     @include _auto-flow(column, true);
                 }
 
-                @include css.selector(".grid-flow-row", $key) {
+                @include css.selector($key, $selector: ".grid-flow-row") {
                     @include _auto-flow(row);
                 }
 
-                @include css.selector(".grid-flow-row-dense", $key) {
+                @include css.selector($key, $selector: ".grid-flow-row-dense") {
                     @include _auto-flow(row, true);
                 }
 
                 @for $i from 1 through variables.$columns {
-                    @include css.selector(".grid-cols-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".grid-cols-#{$i}") {
                         @include _tpl-columns($i);
                     }
                 }
 
                 @for $i from 1 through variables.$rows {
-                    @include css.selector(".grid-rows-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".grid-rows-#{$i}") {
                         @include _tpl-rows($i);
                     }
                 }
@@ -152,37 +152,37 @@
     @each $key, $value in breakpoint.$extend {
         @include breakpoint.up($key) {
             @at-root {
-                @include css.selector(".col-auto", $key) {
+                @include css.selector($key, $selector: ".col-auto") {
                     @include _column-span(auto);
                 }
 
                 @for $i from 1 through variables.$columns {
-                    @include css.selector(".col-span-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".col-span-#{$i}") {
                         @include _column-span($i);
                     }
                 }
 
-                @include css.selector(".col-span-full", $key) {
+                @include css.selector($key, $selector: ".col-span-full") {
                     @include _column-span(full);
                 }
 
                 @for $i from 1 through variables.$columns + 1 {
-                    @include css.selector(".col-start-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".col-start-#{$i}") {
                         @include _column-start($i);
                     }
                 }
 
-                @include css.selector(".col-start-auto", $key) {
+                @include css.selector($key, $selector: ".col-start-auto") {
                     @include _column-start(auto);
                 }
 
                 @for $i from 1 through variables.$columns + 1 {
-                    @include css.selector(".col-end-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".col-end-#{$i}") {
                         @include _column-end($i);
                     }
                 }
 
-                @include css.selector(".col-end-auto", $key) {
+                @include css.selector($key, $selector: ".col-end-auto") {
                     @include _column-end(auto);
                 }
             }
@@ -233,37 +233,37 @@
     @each $key, $value in breakpoint.$extend {
         @include breakpoint.up($key) {
             @at-root {
-                @include css.selector(".row-auto", $key) {
+                @include css.selector($key, $selector: ".row-auto") {
                     @include _row-span(auto);
                 }
 
                 @for $i from 1 through variables.$rows {
-                    @include css.selector(".row-span-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".row-span-#{$i}") {
                         @include _row-span($i);
                     }
                 }
 
-                @include css.selector(".row-span-full", $key) {
+                @include css.selector($key, $selector: ".row-span-full") {
                     @include _row-span(full);
                 }
 
                 @for $i from 1 through variables.$rows + 1 {
-                    @include css.selector(".row-start-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".row-start-#{$i}") {
                         @include _row-start($i);
                     }
                 }
 
-                @include css.selector(".row-start-auto", $key) {
+                @include css.selector($key, $selector: ".row-start-auto") {
                     @include _row-start(auto);
                 }
 
                 @for $i from 1 through variables.$rows + 1 {
-                    @include css.selector(".row-end-#{$i}", $key) {
+                    @include css.selector($key, $selector: ".row-end-#{$i}") {
                         @include _row-end($i);
                     }
                 }
 
-                @include css.selector(".row-end-auto", $key) {
+                @include css.selector($key, $selector: ".row-end-auto") {
                     @include _row-end(auto);
                 }
             }
