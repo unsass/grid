@@ -237,7 +237,7 @@
                     @include _row-span(auto);
                 }
 
-                @for $i from 1 through variables.$columns {
+                @for $i from 1 through variables.$rows {
                     @include css.selector(".row-span-#{$i}", $key) {
                         @include _row-span($i);
                     }
@@ -247,7 +247,7 @@
                     @include _row-span(full);
                 }
 
-                @for $i from 1 through variables.$columns + 1 {
+                @for $i from 1 through variables.$rows + 1 {
                     @include css.selector(".row-start-#{$i}", $key) {
                         @include _row-start($i);
                     }
@@ -257,7 +257,7 @@
                     @include _row-start(auto);
                 }
 
-                @for $i from 1 through variables.$columns + 1 {
+                @for $i from 1 through variables.$rows + 1 {
                     @include css.selector(".row-end-#{$i}", $key) {
                         @include _row-end($i);
                     }
