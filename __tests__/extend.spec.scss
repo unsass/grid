@@ -6,6 +6,8 @@
 @use "../index" as grid with (
     $columns: 2,
     $rows: 2,
+    $column-gap: 20px,
+    $row-gap: 10px,
     $screens: (
         "lg": 1024px
     )
@@ -21,7 +23,7 @@
             @include expect(false) {
                 .grid {
                     display: grid;
-                    gap: 12px 12px;
+                    gap: 10px 20px;
                 }
 
                 .grid-flow-col {
