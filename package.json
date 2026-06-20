@@ -23,6 +23,7 @@
         "conventional-changelog-conventionalcommits": "^9.3.1",
         "husky": "^9.1.7",
         "npm-run-all": "^4.1.5",
+        "sass": "^1.97.1",
         "sass-true": "^10.1.0",
         "semantic-release": "^25.0.5",
         "stylelint": "^16.26.1",
@@ -31,11 +32,14 @@
     },
     "dependencies": {
         "@sass-collective/css": "^3.0.0",
-        "@unsass/breakpoint": "^2.5.1",
-        "sass": "^1.89.2"
+        "@unsass/breakpoint": "^2.5.1"
+    },
+    "peerDependencies": {
+        "sass": ">=1.95.0"
     },
     "keywords": [
         "sass",
+        "scss",
         "grid",
         "unsass",
         "front-end"
@@ -49,7 +53,13 @@
         "type": "git",
         "url": "git+https://github.com/unsass/grid.git"
     },
+    "files": [
+        "src/**/*",
+        "*.scss",
+        "CHANGELOG.md"
+    ],
     "publishConfig": {
-        "access": "public"
+        "access": "public",
+        "provenance": true
     }
 }
