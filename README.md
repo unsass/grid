@@ -46,5 +46,5 @@ npm install @unsass/grid
 | `$columns`    | `12`    | Sets numbers of columns.                                                                            |
 | `$column-gap` | `12px`  | Sets the column gap.                                                                                |
 | `$rows`       | `6`     | Sets  numbers of rows.                                                                              |
-| `$rows-gap`   | `12px`  | Sets the row gap.                                                                                   |
+| `$row-gap`    | `12px`  | Sets the row gap.                                                                                   |
 | `$screens`    | `()`    | Sets breakpoints rules. See here for [default tokens](https://github.com/unsass/breakpoint#tokens). |
