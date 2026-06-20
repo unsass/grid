@@ -32,7 +32,7 @@
     },
     "dependencies": {
         "@sass-collective/css": "^3.0.0",
-        "@unsass/breakpoint": "^2.5.1"
+        "@unsass/breakpoint": "^2.7.0"
     },
     "peerDependencies": {
         "sass": ">=1.95.0"
