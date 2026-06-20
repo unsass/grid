@@ -8,6 +8,12 @@
 
 Sass functions and mixins to use grid.
 
+<div align="center">
+
+![Grid](.github/banner.svg)
+
+</div>
+
 ## Installing
 
 ```shell
